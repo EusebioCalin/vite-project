@@ -1,0 +1,8 @@
+**/*.js
+node_modules
+build
+*.css
+*.svg
+vite.config.ts
+src/vite-env.d.ts
+.eslintrc.cjs
