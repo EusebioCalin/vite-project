@@ -1,38 +1,30 @@
+import { Suspense } from 'react';
+import { Canvas } from '@react-three/fiber';
+import {
+  OrbitControls,
+  Html,
+  useProgress,
+  Stars
+} from '@react-three/drei';
+import RetroComputerModel from '../RetroComputerModel/RetroComputerModel';
 
-import './index.scss';
-import { useEffect } from 'react';
+const Loader: React.FC = () => {
+  const { progress } = useProgress();
+  return <Html center>{progress} % loaded</Html>;
+};
 
 const HomePage: React.FC = () => {
-  useEffect(() => {
-    const horizontal = document.querySelector('.horizontal');
-    const vertical = document.querySelector('.vertical');
-
-    for (let i = 0; i < 100; i++) {
-      const stripe = document.createElement('div');
-      stripe.classList.add('stripe');
-      if (horizontal != null) {
-        horizontal
-          .appendChild(stripe);
-      }
-    }
-
-    for (let i = 0; i < 100; i++) {
-      const stripe = document.createElement('div');
-      stripe.classList.add('stripe');
-      if (vertical != null) {
-        vertical
-          .appendChild(stripe);
-      }
-    }
-  }, []);
+  console.log('LOADED');
 
   return (
-        <div>
-            <div className="frame">
-                <div className="horizontal"></div>
-                <div className="vertical"></div>
-            </div>
-        </div>
+    <Canvas frameloop="demand">
+      <ambientLight />
+      <Stars />
+      <OrbitControls />
+      <Suspense fallback={<Loader />}>
+        <RetroComputerModel />
+      </Suspense>
+    </Canvas>
   );
 };
 
