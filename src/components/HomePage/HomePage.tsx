@@ -1,30 +1,11 @@
-import { Suspense } from 'react';
-import { Canvas } from '@react-three/fiber';
-import {
-  OrbitControls,
-  Html,
-  useProgress,
-  Stars
-} from '@react-three/drei';
-import RetroComputerModel from '../RetroComputerModel/RetroComputerModel';
-
-const Loader: React.FC = () => {
-  const { progress } = useProgress();
-  return <Html center>{progress} % loaded</Html>;
-};
+import ModelCanvas from '../ModelCanvas/ModelCanvas';
+import './style.scss';
 
 const HomePage: React.FC = () => {
-  console.log('LOADED');
-
   return (
-    <Canvas frameloop="demand">
-      <ambientLight />
-      <Stars />
-      <OrbitControls />
-      <Suspense fallback={<Loader />}>
-        <RetroComputerModel />
-      </Suspense>
-    </Canvas>
+    <div className='fancy-gradient'>
+      <ModelCanvas/>
+    </div>
   );
 };
 

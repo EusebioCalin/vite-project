@@ -50,7 +50,8 @@ module.exports = {
     "@typescript-eslint/semi": ["error", "always"],
     "no-unexpected-multiline": "error",
     "no-shadow": "off",
-    "@typescript-eslint/no-shadow": "warn"
+    "@typescript-eslint/no-shadow": "warn",
+    "@typescript-eslint/explicit-function-return-type": "warn"
 
   },
   parserOptions: {
