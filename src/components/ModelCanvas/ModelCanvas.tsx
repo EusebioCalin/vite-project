@@ -4,9 +4,12 @@ import {
   OrbitControls,
   Html,
   useProgress,
-  Stars
+  Stars,
+  ContactShadows
 } from '@react-three/drei';
 import RetroComputerModel from '../RetroComputerModel/RetroComputerModel';
+
+import './style.scss';
 
 type rotation =
   Euler | [x: number, y: number, z: number, order?: string | undefined];
@@ -31,23 +34,25 @@ const ModelCanvas: React.FC = () => {
   };
 
   return (
-    <Canvas
-      frameloop="demand"
-      onMouseMove={onMouseMove}
-    >
-      <ambientLight />
-      <Stars />
-      <OrbitControls
-        enableZoom={false}
-        enablePan={false}
-        minPolarAngle={0}
-        maxPolarAngle={Math.PI / 2.25}
-        makeDefault
-      />
-      <Suspense fallback={<Loader />}>
+    <div className='container fancy-gradient'>
+      <Canvas
+        frameloop="demand"
+        onMouseMove={onMouseMove}
+      >
+        <ambientLight />
+        <Stars />
+        <OrbitControls
+          enableZoom={false}
+          enablePan={false}
+          minPolarAngle={0}
+          maxPolarAngle={Math.PI / 2.25}
+          makeDefault
+        />
+        <Suspense fallback={<Loader />}>
         <RetroComputerModel rotation={rotation}/>
-      </Suspense>
-    </Canvas>
+        </Suspense>
+      </Canvas>
+    </div>
   );
 };
 

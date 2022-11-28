@@ -51,7 +51,8 @@ module.exports = {
     "no-unexpected-multiline": "error",
     "no-shadow": "off",
     "@typescript-eslint/no-shadow": "warn",
-    "@typescript-eslint/explicit-function-return-type": "warn"
+    "@typescript-eslint/explicit-function-return-type": "warn",
+    "@typescript-eslint/strict-boolean-expressions": "warn"
 
   },
   parserOptions: {

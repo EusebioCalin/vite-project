@@ -2,7 +2,7 @@
 import './index.scss';
 import { useEffect } from 'react';
 
-const HomePage: React.FC = () => {
+const CodepenAnimation: React.FC = () => {
   useEffect(() => {
     const horizontal = document.querySelector('.horizontal');
     const vertical = document.querySelector('.vertical');
@@ -36,4 +36,4 @@ const HomePage: React.FC = () => {
   );
 };
 
-export default HomePage;
+export default CodepenAnimation;

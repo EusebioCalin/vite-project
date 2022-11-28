@@ -1,10 +1,11 @@
-import './App.css';
-import HomePage from './components/HomePage/HomePage';
+import { RouterProvider } from 'react-router-dom';
+import './App.scss';
+import { router } from './Routes';
 
 const App: React.FC = () => {
   return (
     <div className="App">
-      <HomePage/>
+      <RouterProvider router={router} />
     </div>
   );
 };
