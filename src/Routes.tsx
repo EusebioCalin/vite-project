@@ -4,7 +4,6 @@ import {
 import Fallback from './components/Fallback/Fallback';
 import HomePage from './components/HomePage/HomePage';
 import ModelCanvas from './components/ModelCanvas/ModelCanvas';
-import Contact from './routes/contact';
 
 export const router = createBrowserRouter([
 
@@ -15,12 +14,6 @@ export const router = createBrowserRouter([
   {
     path: '/',
     element: <HomePage />,
-    errorElement: <Fallback />,
-    children: [
-      {
-        path: 'contacts/:contactId',
-        element: <Contact />
-      }
-    ]
+    errorElement: <Fallback />
   }
 ]);
